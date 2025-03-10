@@ -18,86 +18,14 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!--Main Styles-->
     <link rel="stylesheet" href="css/styledb5a.css?=1740344794">
 </head>
 <body>
-    <script>
-jQuery(function($){
-$('#sendmail').submit(function() {
-
-	if(document.sendmail.subject.value == '' || document.sendmail.message.value == '') { 
-
-		DLEalert('Please fill in all the required fields', dle_info);
-		return false;
-
-	}
-	
-	var form = document.forms.sendmail;
-
-	for (i = 0; i < form.elements.length; i++) {
-	  if (form.elements[i].type == 'file') {
-	    if (form.elements[i].value == '') {
-	      form.elements[i].parentNode.removeChild(form.elements[i]);
-	    }
-	  }
-	}
-	
-	var formData = new FormData($('#sendmail')[0]);
-	formData.append('skin', dle_skin);
-
-	ShowLoading('');
-	
-    $.ajax({
-		url: dle_root + "engine/ajax/controller.php?mod=feedback",
-        data: formData,
-        processData: false,
-        contentType: false,
-        type: 'POST',
-        dataType: 'json',
-        success: function(data) {
-			HideLoading('');
-			
-			if (data) {
-		
-				if (data.status == "ok") {
-	
-					scroll( 0, $("#dle-content").offset().top - 70 );
-					$('#dle-content').html(data.text);	
-	
-				} else {
-	
-					if ( document.sendmail.sec_code ) {
-					   document.sendmail.sec_code.value = '';
-					   reload();
-					}
-	
-					if ( dle_captcha_type == "1" ) {
-						if ( typeof grecaptcha != "undefined"  ) {
-							grecaptcha.reset();
-						}
-					} else if (dle_captcha_type == "2") {
-						if ( typeof grecaptcha != "undefined"  ) {
-							grecaptcha.execute('', {action: 'feedback'}).then(function(token) {
-								$('#g-recaptcha-response').val(token);
-							});
-						}
-					}
-	
-					DLEalert(data.text, dle_info);
-	
-				}
-		
-			}
-        }
-    });
-
-  return false;
-});
-FastSearch();
-});
-//-->
-</script>
+   
     <!--call modal start-->
     <div class="modal fade" id="get-call" tabindex="-1" aria-labelledby="get-callLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -245,14 +173,15 @@ FastSearch();
                         </div>
                         <div class="col-sm-4 contact-box">
                             <img src="img/location.png" alt="location">
-                            <h6>Ünvan</h6>
-                            <address class="mb-0">Azure Biznes Mərkəzi, 13-cü mərtəbə</address>
-                        </div>
+                            <h6>WhatsApp</h6>
+                            <address class="mb-0">
+                                <a href="https://wa.me/994556110172">(+99455) 611 01 72</a>
+                            </address>
+                        </div>                                               
                         <div class="col-sm-4 contact-box">
                             <img src="img/mail.png" alt="phone">
                             <h6>E-mail</h6>
-                            <a href="cdn-cgi/l/email-protection.html#234a4d454c6342594a59424746504a444d0d4259">
-                                <span class="__cf_email__" data-cfemail="25445f4c5f440b445f57474f4b654248444c490b464a48">[email&#160;protected]</span></a>
+                            <a href="mailto:Maarifeli28@gmail.com">Maarifeli28@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -262,95 +191,6 @@ FastSearch();
                         
 
 
-
-<p></p>
-
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="az">
-<head>
-     <script type="text/javascript">
-$(document).ready(function() {
-	
-	//if submit button is clicked
-	$('#submit').click(function () {		
-		
-		//Get the data from all the fields
-		var name = $('input[name=name]');
-		var email = $('input[name=email]');
-		var website = $('input[name=website]');
-		var comment = $('textarea[name=comment]');
-		var haqqinda = $('textarea[name=haqqinda]');
-
-		//Simple validation to make sure user entered something
-		//If error found, add hightlight class to the text field
-		
-		if (name.val()=='') {
-			name.addClass('hightlight');
-			return false;
-		} else name.removeClass('hightlight');
-		
-		if (email.val()=='') {
-			email.addClass('hightlight');
-			return false;
-		} else email.removeClass('hightlight');
-
-		if (website.val()=='') {
-			website.addClass('hightlight');
-			return false;
-		} else website.removeClass('hightlight');
-		
-		if (comment.val()=='') {
-			comment.addClass('hightlight');
-			return false;
-		} else comment.removeClass('hightlight');
-		
-		//organize the data properly
-		var data = 'name=' + name.val() + '&haqqinda=' + encodeURIComponent(haqqinda.val()) + '&email=' + email.val() + '&website=' + 
-		website.val() + '&comment='  + encodeURIComponent(comment.val());
-		
-		//disabled all the text fields
-		$('.text').attr('disabled','true');
-		
-		//show the loading sign
-		$('.loading').show();
-		
-		//start the ajax
-		$.ajax({
-			//this is the php file that processes the data and send mail
-			url: "/conn/process3.php",	
-			
-			//GET method is used
-			type: "GET",
-
-			//pass the data			
-			data: data,		
-			
-			//Do not cache the page
-			cache: false,
-			
-			//success
-			success: function (html) {				
-				//if process3.php returned 1/true (send mail success)
-				if (html==1) {					
-					//hide the form
-					$('.form').fadeOut('slow');					
-					
-					//show the success message
-					$('.done').fadeIn('slow');
-					
-				//if process3.php returned 0/false (send mail failed)
-				} else alert('Sorry, unexpected error. Please try again later.');				
-			}		
-		});
-		
-		//cancel the submit button default behaviours
-		return false;
-	});	
-	
-});	
-</script>
 
 
 <style>
@@ -401,7 +241,7 @@ $(document).ready(function() {
                 </div>
             </div>
     		<center>
-            	<input class="btn submit-btn" type="submit" name="submit" value="Göndər"/>
+					<button class="btn submit-btn" type="submit" id="submit">Göndər</button>
         		<div class="loading"></div>
     		</center>
     	</form>
@@ -410,7 +250,44 @@ $(document).ready(function() {
 
 
 <div class="clear"></div>
+<script type="text/javascript">
+$(document).ready(function() {
 
+    $('#submit').click(function () {
+
+        // Get the form data
+        var isim = $('input[name=isim]').val();
+        var telefon = $('input[name=telefon]').val();
+        var eposta = $('input[name=eposta]').val();
+        var mesaj = $('textarea[name=mesaj]').val();
+
+        // Check if all fields are filled
+        if (isim == '' || telefon == '' || eposta == '' || mesaj == '') {
+            alert('Bütün sahələri doldurun.');
+            return false;
+        }
+
+        // WhatsApp message format
+        var message = "Ad: " + isim + "%0A" + 
+                      "Telefon: " + telefon + "%0A" + 
+                      "E-mail: " + eposta + "%0A" + 
+                      "Mesaj: " + mesaj;
+
+        // WhatsApp URL with the formatted message
+        var whatsappUrl = "https://wa.me/994556110172?text=" + message; // replace with your WhatsApp number
+
+        // Open WhatsApp with the message
+        window.open(whatsappUrl, '_blank');
+
+        // Optional: Show success message
+        $('.done').fadeIn('slow');
+        $('.custom-form').fadeOut('slow');
+
+        return false;
+    });
+
+});
+</script>
 
 
 </body>
@@ -420,18 +297,18 @@ $(document).ready(function() {
                     <h4 class="text-center mb-4">Sosial mediada bizi izləyin</h4>
                     <ul class="social-media">
                         <li>
-                            <a href="https://www.facebook.com/MmediaDeluxe/?ref=page_internal" target="_blank">
+                            <a href=" " target="_blank">
                                 <i class="fab fa-facebook-f" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/Mmedia.azstudio" target="_blank">
+                            <a href="https://www.instagram.com/mmediaaz?igsh=MWNwdTY5NGY1dGprbw%3D%3D&utm_source=qr " target="_blank">
                                 <i class="fab fa-instagram" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a target="_blank">
-                                <i class="fab fa-twitter" aria-hidden="true"></i>
+                            <a href="https://www.tiktok.com/@mmedia.az?_t=ZS-8uYl8TZENOy&_r=1"  target="_blank">
+                                <i class="fab fa-tiktok" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
@@ -564,11 +441,9 @@ $(document).ready(function() {
                                 <a href="tel:+994556110172">(+99455) 611 01 72</a>
                             </li>
                             <li>
-                                <a href="cdn-cgi/l/email-protection.html#cda4a3aba28dacb7a4b7aca9a8bea4aaa3e3acb7"><span class="__cf_email__" data-cfemail="d7beb9b1b897b6adbeadb6b3b2a4beb0b9f9b6ad">[email&#160;protected]</span></a>
+                                <a href="mailto:Maarifeli28@gmail.com">Maarifeli28@gmail.com</a>
                             </li>
-                            <li>
-                                <address class="mb-0" style="color: #7c4e56">Azure Biznes Mərkəzi, 13-cü mərtəbə</address>
-                            </li>
+                             
                             <li>
                                 <p class="mb-0" style="color: #7c4e56">İş rejimi: 09:00 - 18:00 (həftə içi), <br> 09:00 - 17:00 (şənbə günü) </p>
                             </li>
@@ -577,18 +452,18 @@ $(document).ready(function() {
                 </div>
                 <ul class="social-media">
                     <li>
-                        <a href="https://www.facebook.com/MmediaDeluxe/?ref=page_internal" target="_blank">
+                        <a href=" " target="_blank">
                             <i class="fab fa-facebook-f" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/Mmedia.azstudio" target="_blank">
+                        <a href="https://www.instagram.com/mmediaaz?igsh=MWNwdTY5NGY1dGprbw%3D%3D&utm_source=qr " target="_blank">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
-                        <a target="_blank">
-                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        <a href="https://www.tiktok.com/@mmedia.az?_t=ZS-8uYl8TZENOy&_r=1"  target="_blank">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
