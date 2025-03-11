@@ -115,8 +115,8 @@
 			} else mesaj.removeClass('hightlight');
 			
 			// Prepare the message for WhatsApp link
-			var message = "Ad: " + encodeURIComponent(name.val()) + 
-						  "\nTelefon: " + encodeURIComponent(telefon.val()) + 
+			var message = "Ad: " + encodeURIComponent(name.val()) + "%0A" + 
+						  "\nTelefon: " + encodeURIComponent(telefon.val()) + "%0A" + 
 						  "\nMesaj: " + encodeURIComponent(mesaj.val());
 	
 			// WhatsApp link format (Replace with your phone number)
