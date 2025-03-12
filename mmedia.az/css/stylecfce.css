@@ -588,14 +588,14 @@ main #wowslider-container1 a.ws_prev {
   line-height: 24px;
 }
 
-.advantage-row .advantage-box svg {
+/*.advantage-row .advantage-box svg {
   width: 24px;
   height: 24px;
   position: absolute;
   top: 24px;
   right: 24px;
   fill: #99724c;
-}
+}-->
 
 /* services */
 #services {
@@ -1161,10 +1161,11 @@ body.dark .inside-pages .contact-box a:hover {
 }
 
 #call-to-action .buttons .action-btn:first-child {
-  background-color: #fff;
-  color: #323232;
+  background-color: inherit;
+  color: #fff;
   margin-top: 40px;
   margin-right: 15px;
+  border: 1px solid #fff; /* Ağ rəngli 2px-lik sərhəd */
 }
 
 #call-to-action .buttons .action-btn:first-child:hover {

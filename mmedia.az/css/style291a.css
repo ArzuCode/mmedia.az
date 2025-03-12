@@ -545,7 +545,7 @@ main #wowslider-container1 a.ws_prev {
   position: relative;
   width: calc(25% - 18px);
   margin: 9px;
-  background-color: #fff;
+  background: linear-gradient(45deg,#dee2ec, #829fd6);
   border-radius: 5px;
   -webkit-box-shadow: 0 2px 16px #2426291f;
           box-shadow: 0 2px 16px #2426291f;
@@ -568,7 +568,7 @@ main #wowslider-container1 a.ws_prev {
   font-size: 24px;
   font-weight: 500;
   line-height: 32px;
-  color: #99724c;
+  color: #f4eeee;
 }
 
 .advantage-row .advantage-box .info {
@@ -593,15 +593,22 @@ main #wowslider-container1 a.ws_prev {
   font-weight: 500;
   line-height: 24px;
 }
+.counter::after {
+  content: "-dən çox";
+  font-size: 25px;
+  margin-left: 5px; /* Söz ilə rəqəm arasında boşluq */
+  color: #fff; /* Yazı rəngi */
+  font-weight: normal;
+}
 
-.advantage-row .advantage-box svg {
+/*.advantage-row .advantage-box svg {
   width: 24px;
   height: 24px;
   position: absolute;
   top: 24px;
   right: 24px;
   fill: #99724c;
-}
+}-->
 
 /* services */
 #services {
@@ -1167,10 +1174,11 @@ body.dark .inside-pages .contact-box a:hover {
 }
 
 #call-to-action .buttons .action-btn:first-child {
-  background-color: #fff;
-  color: #323232;
+  background-color: inherit;
+  color: #fff;
   margin-top: 40px;
   margin-right: 15px;
+  border: 1px solid #fff; /* Ağ rəngli 2px-lik sərhəd */
 }
 
 #call-to-action .buttons .action-btn:first-child:hover {

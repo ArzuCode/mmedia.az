@@ -111,7 +111,28 @@ function stickyHeader() {
     header.classList.remove('sticky');
   }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".counter");
 
+    counters.forEach(counter => {
+        let count = 0;
+        const target = +counter.getAttribute("data-target");
+    
+    function updateCounter() {
+        const speed = target / 300; // Artım sürəti
+        count += speed;
+        counter.innerText = Math.floor(count);
+
+        if (count < target) {
+            requestAnimationFrame(updateCounter);
+        } else {
+            counter.innerText = target; // Son dəyəri göstər
+        }
+    }
+
+    updateCounter();
+});
+});
 
 // active page 
 $('.myMenu .nav-link').each(function () {
