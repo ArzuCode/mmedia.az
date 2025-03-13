@@ -117,7 +117,7 @@ a {
 }
 
 .custom-dropdown-menu-wrap .custom-dropdown-menu li a:hover {
-  color: linear-gradient(45deg, #8795b3, #2a4b87);
+  color: #5f739f;
 }
 
 .custom-dropdown-menu-wrap:hover .custom-dropdown-menu {
@@ -264,7 +264,11 @@ header .section-top #myMenu .navbar-nav .nav-item .nav-link:hover,
 header .section-top #myMenu .navbar-nav .nav-item.active .nav-link {
   opacity: .7;
 }
-
+@media screen and (max-width: 990.99px) {
+  header #myMenu .navbar-nav {
+    background: linear-gradient(45deg,#8795b3, #2a4b87);
+  }
+}
 header .section-top .right-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -379,7 +383,7 @@ header .section-bottom .right-nav .order-btn img {
 }
 
 header .section-bottom .right-nav .order-btn:hover {
-  border-color:linear-gradient(45deg, #8795b3, #2a4b87);
+  border-color: #5f739f;
   background: linear-gradient(45deg, #8795b3, #2a4b87);
     cursor: pointer; /* Cursor mouse-over da pointer olacaq */
     transition: background 0.3s ease; /* Yavaş keçid effekti */
@@ -722,7 +726,7 @@ body.dark .inside-pages .contact-box a:hover {
   line-height: 28px;
   font-weight: bold;
   font-size: 28px;
-  color: linear-gradient(45deg, #8795b3, #2a4b87);
+  color: #5f739f;
   margin-bottom: 20px;
 }
 
@@ -745,7 +749,7 @@ body.dark .inside-pages .contact-box a:hover {
   border-radius: 25px;
   padding: 15px 45px;
   background: linear-gradient(45deg, #8795b3, #2a4b87);
-  border: 1px solid linear-gradient(45deg, #8795b3, #2a4b87);
+  border: 1px solid #5f739f;
   -webkit-box-shadow: 0 10px 10px -10px rgba(124, 78, 86, 0.51);
           box-shadow: 0 10px 10px -10px rgba(124, 78, 86, 0.51);
   -webkit-transition: 300ms all ease;
@@ -754,7 +758,7 @@ body.dark .inside-pages .contact-box a:hover {
 
 #about .about-box .about-text a:hover {
   background-color: #fff;
-  color: linear-gradient(45deg, #8795b3, #2a4b87);
+  color: #5f739f;
 }
 
 #about .about-box .img-wrap {
@@ -992,7 +996,7 @@ body.dark .inside-pages .contact-box a:hover {
   display: inline-block;
   margin: 40px auto 0;
   position: relative;
-  color: linear-gradient(45deg, #8795b3, #2a4b87);
+  color: #5f739f;
   font-weight: 500;
   font-size: 17px;
   letter-spacing: -0.1px;
@@ -1255,7 +1259,7 @@ footer .section-top .social-media li a i {
 }
 
 footer .section-top .social-media li a:hover i {
-  color: linear-gradient(45deg, #8795b3, #2a4b87);
+  color: #5f739f;
 }
 
 footer .section-top .change-lang-wrap {
@@ -1390,8 +1394,8 @@ footer .section-bottom .copyright-row p a {
 }
 
 .custom-form .effect:focus {
-    border-color:linear-gradient(45deg, #8795b3, #2a4b87);
-    box-shadow: 0 0 3px linear-gradient(45deg, #8795b3, #2a4b87);
+    border-color: #5f739f;
+    box-shadow: #5f739f;
 }
 
 .custom-form .submit-btn {
@@ -1441,7 +1445,7 @@ footer .section-bottom .copyright-row p a {
     margin: 0 40px 10px 40px;
     padding-left: 0;
     border: none;
-    border-bottom: 1px solid linear-gradient(45deg, #8795b3, #2a4b87);
+    border-bottom: #5f739f;
 }
 
 .modal-title {
