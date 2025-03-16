@@ -170,7 +170,26 @@ $('body').click(function() {
     }, 200);
 });   
     
-    
+// Scroll düyməsini seçirik
+let scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// Səhifə scroll edildikdə düyməni göstər
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 200) { 
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+});
+
+// Düyməyə klik edildikdə səhifəni yuxarı qaytar
+scrollTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+ 
     
     
     

@@ -36,7 +36,27 @@ body:not(.dark) .light-text {
 body.dark .dark-text {
     display: none;
 }
+/* Scrollbar genişliyi */
+::-webkit-scrollbar {
+  width: 12px;
+}
 
+/* Scrollbar track (arka fon) */
+::-webkit-scrollbar-track {
+  background: #5f739f; 
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb (hərəkət edən hissə) */
+::-webkit-scrollbar-thumb {
+  background: #b4c0db; 
+  border-radius: 10px;
+}
+
+/* Hover olduqda */
+::-webkit-scrollbar-thumb:hover {
+  background: #395798; 
+}
 button, *[type="button"] {
   appearance: none;
   -moz-appearance: none;
@@ -238,7 +258,9 @@ header {
 
 header .section-top {
   padding: 10px 0;
-  background-color: #FAFAFA;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(0px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header .section-top .navbar-brand {
@@ -322,8 +344,10 @@ header .section-top .right-nav .change-mood-wrap .change-mood.dark-mood .icon {
 }
 
 header .section-bottom {
-  padding: 15px 0;
-  background-color: #fff;
+  padding: 10px 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(0px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   -webkit-transition: 300ms padding ease;
   transition: 300ms padding ease;
 }
@@ -1189,6 +1213,27 @@ body.dark .inside-pages .contact-box a:hover {
   color: #0dd478;
 }
 
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #5f739f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Əvvəlcə gizli olur */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top-btn:hover {
+    background: #3e588f;
+    transform: scale(1.1);
+}
 /* footer */
 footer {
   background-color: #fff;

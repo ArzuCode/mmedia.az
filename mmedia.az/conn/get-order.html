@@ -106,7 +106,11 @@
             var telefon = $('#telefon').val();
             var dizayn = $('#dizayn').val();
             var mesaj = $('#mesaj').val();
-
+            // Check if all fields are filled
+            if (isim == '' || telefon == '' || dizayn == '' || mesaj == '') {
+            alert('Bütün sahələri doldurun.');
+            return false;
+            }
             // WhatsApp linkini yaradın
             var whatsappLink = "https://api.whatsapp.com/send?phone=+994556110172&text=Salam,%20mənim%20adım:%20" + encodeURIComponent(isim) + "%0A" + "%20Telefon:%20" + encodeURIComponent(telefon) + "%0A" + "%20Dizayn:%20" + encodeURIComponent(dizayn) + "%0A" + "%20Qeydlər:%20" + encodeURIComponent(mesaj);
 
