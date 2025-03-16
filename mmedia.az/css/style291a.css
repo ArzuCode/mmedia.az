@@ -260,7 +260,7 @@ header {
 header .section-top {
   padding: 10px 0;
   background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(0px);
+  
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -349,7 +349,7 @@ header .section-top .right-nav .change-mood-wrap .change-mood.dark-mood .icon {
 header .section-bottom {
   padding: 10px 0;
   background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(0px);
+  
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   -webkit-transition: 300ms padding ease;
   transition: 300ms padding ease;
